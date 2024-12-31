@@ -6,7 +6,7 @@ The idea for this project was inspired by a story featured in [The Times](https:
 
 ## Project Overview
 
-This project leverages modern machine learning techniques to analyze and match missing persons to unidentified remains using data from the National Missing and Unidentified Persons System ([NamUs](https://namus.nij.ojp.gov/)). The pipeline combines structured rule-based filtering with nuanced LLM-driven textual analysis to increase the likelihood of finding meaningful matches. The process involves:
+This project leverages modern machine learning techniques to analyze and match missing persons to unidentified remains using data from the National Missing and Unidentified Persons System ([NamUs](https://namus.nij.ojp.gov/)). The pipeline combines structured rule-based filtering with LLM-driven textual analysis to increase the likelihood of finding meaningful matches. The process involves:
 
 1. **Data Collection**:  
    Leveraging the NamUs Scraper by Prepager ([GitHub Repository](https://github.com/Prepager/namus-scraper)), the `scrape_data.py` script downloads data for all missing and unidentified persons from NamUs.
@@ -25,6 +25,9 @@ This project leverages modern machine learning techniques to analyze and match m
    Matches are saved in an Excel file (`output/matches.xlsx`) with NamUs IDs for both missing and unidentified individuals, along with their overall similarity score and details of individual category scores.
 
 ## Call to Action
+
+This project has already demonstrated its potential to aid investigations. During one of the test runs, the algorithm successfully identified a meaningful match between Timothy Lucas ([MP3052](https://www.namus.gov/MissingPersons/Case#/30521/details?nav)) and [UP10830](https://www.namus.gov/UnidentifiedPersons/Case#/10830/details?nav). This match was reported to the authorities for further investigation, underscoring the potential of this tool to assist in resolving real cases and providing closure to families.
+
 
 You are encouraged to download the `output/matches.xlsx`, explore potential matches with high similarity scores, copy the NamUs IDs, and verify the cases on [NamUs](https://namus.nij.ojp.gov/). If you identify a likely match, please report it to the authorities to assist in resolving these cases.
 
@@ -62,7 +65,7 @@ This modular structure ensures that each stage can be improved or replaced witho
 
 ## Role of the Large Language Model (LLM)
 
-A key innovation of this project is its use of an LLM to enhance the matching process by providing nuanced textual comparisons for:
+A key innovation of this project is its use of an LLM to enhance the matching process by providing textual comparisons for:
 
 - **Clothing Descriptions**: Analyzing details about the type, color, or style of garments.  
 - **Physical Features**: Evaluating unique identifiers like tattoos, scars, or other notable characteristics.  
